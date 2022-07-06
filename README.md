@@ -17,8 +17,12 @@ This application demonstrate the so-called "two tailed test". Two assupmtions ar
 
 The null hypothesis lies with the mean of the distribution, hence, the hypothesis can be written as
 
-$$ H_0: \mu = \mu_0\\
-H_a: \mu \neq \mu_0$$
+$$ 
+\begin{align}
+H_0: \mu = \mu_0 \\
+H_a: \mu \neq \mu_0
+\end{align}
+$$
 
 # Interface Introduction
 <p align = "center">
@@ -33,7 +37,8 @@ is unknown.)
 
 # Demonstration
 
-Suppose that one wants to test the null hypothesis of $\mu = 0$, and the distribution that one draws samples from has $\mu = 1.5$. Also, we set the type I error as $0.05$. The argument should be type as following:
+Suppose that one wants to test the null hypothesis of $\mu = 0$, 
+and the distribution that one draws samples from has $\mu = 1.5$. Also, we set the type I error as $0.05$. The argument should be type as following:
 
 <p align = "center">
 <img src = "picture/demo 1.jpg" width = "800"/>
@@ -44,6 +49,7 @@ Then we can press <i>enter</i> to show the graph
 <p align = "center"><img src = "picture/demo 2.jpg" width = "800"/></p>
 
 Here, as we can see, the <span style = "color: #3DFCFF"><i>blue line</i></span> represents the normal curve of null hypothesis, and the <span style = "color: #FFC327"><i>orange line</i></span> represents the normal curve of the true parameter. Also, the app will automatically calculate the value of type II error and power as marked in the picture. <br>
+
 Next, you can click on the checkbox above the visualize the area of type I error and type II error.
 
 <p align = "center"><img src = "picture/gif 1.gif" width = "800"/></p>
