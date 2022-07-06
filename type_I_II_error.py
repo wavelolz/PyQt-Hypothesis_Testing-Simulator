@@ -12,8 +12,7 @@ class mymainform(QtWidgets.QMainWindow):
     def __init__(self, *args, **kwargs):
         super(mymainform, self).__init__(*args, **kwargs)
         uic.loadUi("type_i_ii_error.ui", self)
-        # self.pop_up_1 = dialog_1()
-        # self.pop_up_2 = dialog_2()
+
 
         self.graph.setBackground("#2B3B84")
         self.show_type_i.stateChanged.connect(self._show_type_i)
