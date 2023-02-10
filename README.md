@@ -10,7 +10,7 @@ This project won't teach you the
 theory behind hypothesis testing. However, it will demonstrate some easy graph to help you truly understand how the hypothesis testing works.
 
 # Introduction
-This application demonstrate the so-called "two tailed test". Two assupmtions are set to simplify the process
+This application demonstrates the so-called "two tailed test". Two assupmtions are set to simplify the process
 
 - The distribution is normally distributed
 - The normal distribution has variance 1
