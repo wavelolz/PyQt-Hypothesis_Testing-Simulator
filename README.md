@@ -56,5 +56,9 @@ In addition, you could also check and uncheck the check box of power to see the 
 
 The <span style = "color: #FFFD1B"><i>yellow area</i></span> represents the power
 
+<br>
+To see a full explanation of each number in the application and its statistical meaning, you could refer to the text area on the left. The text area provides complete explanation of the meaning of the parameters which help you to better understand hypothesis testing.
+
 <hr>
+
 That's all for this project, hope that this app can help you better understand the hypothesis testing.
