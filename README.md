@@ -61,4 +61,7 @@ To see a full explanation of each number in the application and its statistical 
 
 <hr>
 
-That's all for this project, hope that this app can help you better understand the hypothesis testing.
+That's all for this project, hope that this app can help you better understand the hypothesis testing. 
+
+If you want to try on the application youself, please click <a href = "https://drive.google.com/file/d/1PxKwqLB1ZlR1uVHM4OuEoHsF4MkH4re7/view?usp=share_link">  HERE </a> to download the EXE file that could easily run on your computer.
+
