@@ -1,5 +1,6 @@
 from PyQt6 import QtWidgets, uic, QtGui
 from PyQt6.QtWidgets import QMessageBox
+from PyQt6.QtGui import QDoubleValidator
 from matplotlib.pyplot import draw
 from scipy.stats import norm
 import pyqtgraph as pg
@@ -21,6 +22,11 @@ class mymainform(QtWidgets.QMainWindow):
         self.update_plot()
 
         self.graph.setBackground("#2B3B84")
+        self.graph.setEnabled(False)
+        self.h0mu.setValidator(QDoubleValidator())
+        self.hamu.setValidator(QDoubleValidator())
+        self.type_i_error.setValidator(QDoubleValidator())
+
         self.show_type_i.stateChanged.connect(self._show_type_i)
         self.show_type_ii.stateChanged.connect(self._show_type_ii)
         self.show_power.stateChanged.connect(self._show_power)
@@ -28,8 +34,7 @@ class mymainform(QtWidgets.QMainWindow):
         self.hamu.returnPressed.connect(self.update_plot)
         self.type_i_error.returnPressed.connect(self.update_plot)
 
-        
-
+    
 
     def update_plot(self):
         # return to default setting--------------------------
@@ -72,12 +77,12 @@ class mymainform(QtWidgets.QMainWindow):
 
     def _add_text(self):
         self.explain_text = "The graph illustrates the process of a two-tailed test of testing value of μ. \n\n"
-        self.explain_text += f"The null hypothesis (H0) is μ = {self.h0mu_val} and the alternative hypothesis (Ha) is μ ≠ {self.h0mu_val}.\n\n"
-        self.explain_text += f"Now suppose we randomly sample from the population of a normal distribution with μ = {self.hamu_val} and σ = 1. \n\n"
+        self.explain_text += f"The null hypothesis (H0) is μ = {self.h0mu_val} and the alternative hypothesis (Ha) is μ ≠ {self.h0mu_val} \n\n"
+        self.explain_text += f"Now suppose we randomly sample from the population of a normal distribution with μ = {self.hamu_val} and σ = 1 \n\n"
         self.explain_text += f"When we set the significance level to {self.type_i_error.text()}, "
-        self.explain_text += f"the value of type II error will be {self.type_ii_error_val}."
-        self.explain_text += f"The power of the test is {self.power_val}. \n\n"
-        self.explain_text += f"That is, when drawing a sample from the population of μ = {self.hamu_val} and σ = 1, we would have probability of {self.type_ii_error.text()} to falsely fail to reject the null hypothesis when the value of μ is {self.hamu_val} rather than {self.h0mu_val}. \n\n"
+        self.explain_text += f"the value of type II error will be {self.type_ii_error_val} "
+        self.explain_text += f"The power of the test is {self.power_val}  \n\n"
+        self.explain_text += f"That is, when drawing multiple samples from the population of μ = {self.hamu_val} and σ = 1, we would have probability of {self.type_ii_error.text()} to falsely fail to reject the null hypothesis when the value of μ is {self.hamu_val} rather than {self.h0mu_val} \n\n"
         self.explain_text += f"In addition, we would have probability of {self.power_val} to correctly reject the null hypothesis."
         self.explain_text_edit.setText(self.explain_text)
 
@@ -198,35 +203,6 @@ class mymainform(QtWidgets.QMainWindow):
 # ----------------------------------------------------------
 
 
-# create pop up window for leaving-------------------------
-    def _leaving(self):
-        dlg = QMessageBox(self)
-        dlg.setWindowTitle("Alarm")
-        dlg.setText("Are you sure you want to leave ?")
-        dlg.setIcon(QMessageBox.Icon.Warning)
-        dlg.setStyleSheet("background-color: white")
-        dlg.addButton("Cancel", QtWidgets.QMessageBox.NoRole)
-        dlg.addButton("Yes", QtWidgets.QMessageBox.NoRole)
-        q = dlg.exec_()
-        if q == 0:
-            dlg.done(1)
-        else:
-            self.close()
-# ----------------------------------------------------------
-        
-# create pop up window when the user does not enter the parameter 
-# correctly
-    def exception_dialog_value_error(self):
-        dlg = QMessageBox(self)
-        dlg.setWindowTitle("Alarm")
-        dlg.setText("The parameter should be numerical")
-        dlg.setIcon(QMessageBox.Icon.Critical)
-        dlg.setStyleSheet("background-color: white")
-        dlg.addButton("OK", QtWidgets.QMessageBox.NoRole)
-        q = dlg.exec_()
-        if q == 0:
-            dlg.done(1)
-# ----------------------------------------------------------
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
